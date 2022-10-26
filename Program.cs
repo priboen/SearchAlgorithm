@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace SearchAlgorithm
 {
@@ -79,6 +80,34 @@ namespace SearchAlgorithm
                 ch = char.Parse(Console.ReadLine().ToUpper());
             } 
             while ((ch == 'y'));
+        }
+
+        public void LinearSeacrh()
+        {
+            char ch;
+            //search for number of comparisson
+            int ctr;
+            do
+            {
+                //Accept the number to be searched
+                Console.WriteLine("\nEnter the elements you want to search : ");
+                int item = Convert.ToInt32(Console.ReadLine());
+                ctr = 0;
+                for (i = 0; i < n; i++)
+                {
+                    ctr++;
+                    if (arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + " found at position " + (i + 1).ToString());
+                        break;
+                    }
+                }
+                if(i== n)
+                    Console.WriteLine("\n" + item.ToString() + " not found in the array ");
+                Console.WriteLine("\nNumber of comparisson : " + ctr);
+                Console.Write("\nContinue Search (y/n) : ");
+                ch = Char.Parse(Console.ReadLine().ToUpper());
+            } while((ch == 'y'));
         }
         static void Main(string[] args)
         {
