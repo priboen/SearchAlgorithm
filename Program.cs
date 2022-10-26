@@ -82,7 +82,7 @@ namespace SearchAlgorithm
             while ((ch == 'y'));
         }
 
-        public void LinearSeacrh()
+        public void LinearSearch()
         {
             char ch;
             //search for number of comparisson
@@ -106,7 +106,7 @@ namespace SearchAlgorithm
                     Console.WriteLine("\n" + item.ToString() + " not found in the array ");
                 Console.WriteLine("\nNumber of comparisson : " + ctr);
                 Console.Write("\nContinue Search (y/n) : ");
-                ch = Char.Parse(Console.ReadLine().ToUpper());
+                ch = char.Parse(Console.ReadLine().ToUpper());
             } while((ch == 'y'));
         }
         static void Main(string[] args)
